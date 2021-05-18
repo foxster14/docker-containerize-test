@@ -29,7 +29,6 @@ router.post('/', function(req, res, next) {
 
         console.log("siteUsers variable\n",siteUsers);
     
-        //Adding the new boxer to the end of the converted array that was just read in from boxers.json
         siteUsers.push(user);
     
         /**Now that the boxer has been added to the array, the JSON.stringify() method converts the JS array
@@ -46,7 +45,7 @@ router.post('/', function(req, res, next) {
         })
     
         //Render the new boxer object to display view
-        res.render('display', user);
+        res.render('displayusers', user);
 
     }
 
