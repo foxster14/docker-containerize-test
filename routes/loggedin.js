@@ -17,21 +17,23 @@ router.post('/', function(req, res, next) {
         res.render('loggedin', { email: String(emailUserEntered)})
         console.log("success");
     }*/
-
+    //var parsedData = JSON.parse(userData); //puts it into javascript object notation
+    var isfound = false; //flag variable (once it finds something, you raise the flag to break the loop)
     for(var i = 0; i < userData.length; i++){
 
-        if(userData[i].email === emailUserEntered && userData[i].password == passwordUserEntered) {
-            res.render('loggedin', { email: String(emailUserEntered)})
-            //break;
-        }
-        else{
-            console.log("error");
-            res.redirect(req.get('referer'));
-            //break;
+        console.log(userData[i].email);
+
+        if(userData[i].email == emailUserEntered && userData[i].password == passwordUserEntered) {
+            isfound = true;
+            i = userData.length;
+            res.render('loggedin', { email: emailUserEntered});
         }
 
     }
 
+    if(isfound == false){
+        res.redirect(req.get('referer')); //reload page
+    }
 
     
 });
