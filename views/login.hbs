@@ -1,7 +1,23 @@
-<h1>Log In:</h1>
-<form action="/loggedin" method="POST">
-    <input type="text" name="email" class="form-control" placeholder="Email Address" size="40"><br>
-    <input type="text" name="password" class="form-control" placeholder="Password" size="40"><br><br>
-   
-    <input type="submit" class="btn btn-primary" value="submit">
-</form>
+<div class="sidenav">
+    <div class="login-main-text">
+            <h2>Application<br> Login Page</h2>
+            <p>Login or register from here to access.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+           <div class="form-group">
+                <form action="/loggedin" method="POST">
+                    <label>Email Address</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email Address" size="40"><br>
+            </div>
+            <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" name="password" class="form-control" placeholder="Password" size="40"><br><br>
+            </div>
+                    <input type="submit" class="btn btn-primary" value="submit">
+                </form>
+        </div>
+    </div>
+</div>
